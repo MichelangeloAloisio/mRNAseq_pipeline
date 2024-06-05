@@ -22,7 +22,7 @@ out1=EXCLUDED_SRR_ID_2.fastq out2=EXCLUDED_SRR_ID_2.fastq \
 outu1=DECONTAMINED_SRR_ID_2.fastq outu2=DECONTAMINED_SRR_ID_2.fastq
 
 ### STEP_6 Trimming  using version trim_galore 0.5.0, and quality control after trimming using fastqc 
-### note: the file used are those in STEP4 and not the rRNA decontamined files but those splitted in STEP_3
+##note: the file used are those in STEP4 and not the rRNA decontamined files but those splitted in STEP_3
 trim_galore --paired  -q 20  -o path_output --fastqc SRR_ID_1.fastq SRR_ID_2.fastq
 
 ### STEP_7 STAR template indexing
@@ -32,7 +32,7 @@ STAR --runMode genomeGenerate --genomeDir path_genome \
           --sjdbOverhang 50 --outFileNamePrefix v44_primary_
 
 ### STEP_8 STAR alignment
-## note: in this step validated (FASTQ_val_1 and FASTQ_val_2) input files produced in STEP6 are used
+##note: in this step validated (FASTQ_val_1 and FASTQ_val_2) input files produced in STEP6 are used
 STAR \
 --genomeDir path_genome \
 --sjdbGTFfile gencode.v44.primary_assembly.annotation.gtf \
@@ -43,13 +43,13 @@ STAR \
 --runThreadN 16
 
 ### STEP9 feature counts for gene USING subread featureCounts (v2.0.2)
-## note: the option -s 0 is used since the file had been produced with unstranded Illumina kit
-## the 3 dots indicates all the bam files from case and control samples
+##note: the option -s 0 is used since the file had been produced with unstranded Illumina kit
+##the 3 dots indicates all the bam files from case and control samples
 featureCounts -T 32 -p --countReadPairs -B -s 0 -C -a gencode.v44.primary_assembly.annotation.gtf -o feature_counts_subread.counts.txt SRR_ID_1.bam ... 
 
 
 ### STEP10 Deseq2 
-## the Deseq2 pipeline is available in the repository look the Deseq2_DEG.R file
+##the Deseq2 pipeline is available in the repository look the Deseq2_DEG.R file
 
 
 
