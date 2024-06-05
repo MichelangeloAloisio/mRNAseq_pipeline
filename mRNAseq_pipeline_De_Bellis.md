@@ -46,6 +46,8 @@ STAR \
 ### note: the option -s 0 is used since the file had been produced with unstranded Illumina kit
 ### the 3 dots indicates all the bam files from case and control samples
 featureCounts -T 32 -p --countReadPairs -B -s 0 -C -a gencode.v44.primary_assembly.annotation.gtf -o feature_counts_subread.counts.txt SRR_ID_1.bam ... 
+
+
 ##STEP10 Deseq2 
 ### the Deseq2 pipeline is available in the repository look the Deseq2_DEG.R file
 
