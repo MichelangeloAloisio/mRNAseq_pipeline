@@ -43,8 +43,8 @@ STAR \
 --runThreadN 16
 
 ### STEP9 feature counts for gene USING subread featureCounts (v2.0.2)
-### note: the option -s 0 is used since the file had been produced with unstranded Illumina kit
-### the 3 dots indicates all the bam files from case and control samples
+## note: the option -s 0 is used since the file had been produced with unstranded Illumina kit
+## the 3 dots indicates all the bam files from case and control samples
 featureCounts -T 32 -p --countReadPairs -B -s 0 -C -a gencode.v44.primary_assembly.annotation.gtf -o feature_counts_subread.counts.txt SRR_ID_1.bam ... 
 
 
