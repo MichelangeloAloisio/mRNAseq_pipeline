@@ -32,7 +32,7 @@ STAR --runMode genomeGenerate --genomeDir path_genome \
           --sjdbOverhang 50 --outFileNamePrefix v44_primary_
 
 ### STEP_8 STAR alignment
-### note: in this step validated (FASTQ_val_1 and FASTQ_val_2) input files produced in STEP6 are used
+## note: in this step validated (FASTQ_val_1 and FASTQ_val_2) input files produced in STEP6 are used
 STAR \
 --genomeDir path_genome \
 --sjdbGTFfile gencode.v44.primary_assembly.annotation.gtf \
@@ -48,8 +48,8 @@ STAR \
 featureCounts -T 32 -p --countReadPairs -B -s 0 -C -a gencode.v44.primary_assembly.annotation.gtf -o feature_counts_subread.counts.txt SRR_ID_1.bam ... 
 
 
-##STEP10 Deseq2 
-### the Deseq2 pipeline is available in the repository look the Deseq2_DEG.R file
+### STEP10 Deseq2 
+## the Deseq2 pipeline is available in the repository look the Deseq2_DEG.R file
 
 
 
