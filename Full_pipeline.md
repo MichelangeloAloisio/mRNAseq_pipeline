@@ -15,8 +15,12 @@ fastq-dump --split-files  --outdir path_outdir SRR_ID.sra
 fastqc SRR_ID_1.fastq -o output_path
 fastqc SRR_ID_2.fastq -o output_path
 
-### STEP_5 rRNA amount Sequence Expression AnaLyzer Seal from BBtools (v39.01) 
-seal.sh -Xmx50G rcomp=t  threads=16 overwrite=true ref=$path_rRNA_template \
+### STEP_5 rRNA amount Sequence Expression AnaLyzer Seal from BBtools (v39.01), rRNAhomo_sapiens_decontamination.fa file is available in the repository
+seal.sh -Xmx50G rcomp=t  threads=16 overwrite=true ref=rRNAhomo_sapiens_decontamination.fa \
 in=SRR_ID_1.fastq in2=SRR_ID_2.fastq \
 out1=EXCLUDED_SRR_ID_2.fastq out2=EXCLUDED_SRR_ID_2.fastq \
 outu1=DECONTAMINED_SRR_ID_2.fastq outu2=DECONTAMINED_SRR_ID_2.fastq
+
+### STEP_6 Trimming  using version trim_galore 0.5.0, and quality control after trimming using fastqc 
+### note: the file used are those in STEP4 and not the rRNA decontamined files
+trim_galore --paired  -q 20  -o path_output --fastqc SRR_ID_1.fastq SRR_ID_2.fastq
