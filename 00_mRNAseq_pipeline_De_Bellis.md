@@ -1,5 +1,5 @@
 # mRNAseq_pipeline used at IRCCS Saverio De Bellis 
-The RNA-seq Full pipeline used in the scientific paper titled "Transcriptomic pathway discovery in Diarrhea-Predominant Irritable Bowel Syndrome: A causal network inference approach" is available.
+The RNA-seq Full pipeline used in the scientific paper titled "Transcriptomic pathway discovery in Diarrhea-Predominant Irritable Bowel Syndrome: A causal network inference approach" is available in this repository.
 The full pipeline is composed of XXX steps: 
 
 ### STEP_1 Download fastq files from Gene Expression Omnibus (GEO) using SRA toolkit version 3.0.0 
