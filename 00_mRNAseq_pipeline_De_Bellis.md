@@ -49,7 +49,7 @@ featureCounts -T 32 -p --countReadPairs -B -s 0 -C -a gencode.v44.primary_assemb
 
 
 ### STEP10 Deseq2 
-##the Deseq2 pipeline is available in the repository look the Deseq2_DEG.R file
+##the Deseq2 pipeline is available in the corrent repository, in the file: Deseq2_DEG.R 
 
 
 
